@@ -1,0 +1,15 @@
+// ضع بيانات مشروع Supabase هنا بعد إنشاء المشروع.
+const SUPABASE_URL = 'ضع-رابط-مشروعك-هنا';
+const SUPABASE_ANON_KEY = 'ضع-anon-key-هنا';
+
+const configured =
+  SUPABASE_URL.startsWith('https://') &&
+  !SUPABASE_URL.includes('ضع-') &&
+  !SUPABASE_ANON_KEY.includes('ضع-');
+
+const db = configured
+  ? window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_ANON_KEY
+    )
+  : null;
